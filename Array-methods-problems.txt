@@ -1,0 +1,472 @@
+1. map()
+Definition
+
+map() creates a new array by applying a function to every element.
+
+Syntax
+array.map((item, index) => {})
+Example
+let nums = [1, 2, 3, 4];
+
+let result = nums.map(num => num * 2);
+
+console.log(result);
+Output
+[2, 4, 6, 8]
+Small Problem
+Convert all names to uppercase
+let names = ["vasu", "ram", "sai"];
+
+let upper = names.map(name => name.toUpperCase());
+
+console.log(upper);
+2. filter()
+Definition
+
+filter() returns elements that satisfy a condition.
+
+Example
+let nums = [10, 15, 20, 25];
+
+let even = nums.filter(num => num % 2 === 0);
+
+console.log(even);
+Output
+[10, 20]
+Small Problem
+Find students above 18 age
+let ages = [16, 18, 20, 15, 25];
+
+let adults = ages.filter(age => age >= 18);
+
+console.log(adults);
+3. reduce()
+Definition
+
+reduce() reduces array into a single value.
+
+Example
+let nums = [1, 2, 3, 4];
+
+let sum = nums.reduce((total, num) => total + num, 0);
+
+console.log(sum);
+Output
+10
+Small Problem
+Find total cart price
+let prices = [100, 200, 300];
+
+let total = prices.reduce((sum, price) => sum + price, 0);
+
+console.log(total);
+4. forEach()
+Definition
+
+forEach() executes a function for every array element.
+
+Example
+let fruits = ["Apple", "Mango", "Banana"];
+
+fruits.forEach(fruit => {
+    console.log(fruit);
+});
+Small Problem
+Print squares
+let nums = [1, 2, 3, 4];
+
+nums.forEach(num => {
+    console.log(num * num);
+});
+5. find()
+Definition
+
+find() returns the first matching element.
+
+Example
+let nums = [5, 10, 15, 20];
+
+let result = nums.find(num => num > 10);
+
+console.log(result);
+Output
+15
+Small Problem
+Find first even number
+let nums = [1, 3, 7, 8, 10];
+
+let even = nums.find(num => num % 2 === 0);
+
+console.log(even);
+6. findIndex()
+Definition
+
+findIndex() returns index of first matching element.
+
+Example
+let nums = [5, 10, 15];
+
+let index = nums.findIndex(num => num === 10);
+
+console.log(index);
+Output
+1
+7. some()
+Definition
+
+some() checks if at least one element satisfies condition.
+
+Example
+let nums = [1, 3, 5, 8];
+
+let result = nums.some(num => num % 2 === 0);
+
+console.log(result);
+Output
+true
+Small Problem
+Check if any student failed
+let marks = [80, 70, 25, 90];
+
+let failed = marks.some(mark => mark < 35);
+
+console.log(failed);
+8. every()
+Definition
+
+every() checks whether all elements satisfy condition.
+
+Example
+let nums = [2, 4, 6];
+
+let result = nums.every(num => num % 2 === 0);
+
+console.log(result);
+Output
+true
+9. includes()
+Definition
+
+includes() checks whether array contains a value.
+
+Example
+let fruits = ["apple", "banana", "mango"];
+
+console.log(fruits.includes("banana"));
+Output
+true
+10. push()
+Definition
+
+Adds element at end.
+
+Example
+let nums = [1, 2];
+
+nums.push(3);
+
+console.log(nums);
+Output
+[1, 2, 3]
+11. pop()
+Definition
+
+Removes last element.
+
+Example
+let nums = [1, 2, 3];
+
+nums.pop();
+
+console.log(nums);
+Output
+[1, 2]
+12. shift()
+Definition
+
+Removes first element.
+
+Example
+let nums = [1, 2, 3];
+
+nums.shift();
+
+console.log(nums);
+Output
+[2, 3]
+13. unshift()
+Definition
+
+Adds element at beginning.
+
+Example
+let nums = [2, 3];
+
+nums.unshift(1);
+
+console.log(nums);
+Output
+[1, 2, 3]
+14. slice()
+Definition
+
+Returns selected portion of array.
+
+Example
+let nums = [1, 2, 3, 4, 5];
+
+let result = nums.slice(1, 4);
+
+console.log(result);
+Output
+[2, 3, 4]
+15. splice()
+Definition
+
+Adds/removes elements from array.
+
+Example
+let nums = [1, 2, 3, 4];
+
+nums.splice(1, 2);
+
+console.log(nums);
+Output
+[1, 4]
+Small Problem
+Add element using splice
+let colors = ["red", "blue"];
+
+colors.splice(1, 0, "green");
+
+console.log(colors);
+16. sort()
+Definition
+
+Sorts array elements.
+
+Example
+let nums = [5, 2, 8, 1];
+
+nums.sort((a, b) => a - b);
+
+console.log(nums);
+Output
+[1, 2, 5, 8]
+17. reverse()
+Definition
+
+Reverses array.
+
+Example
+let nums = [1, 2, 3];
+
+nums.reverse();
+
+console.log(nums);
+Output
+[3, 2, 1]
+18. concat()
+Definition
+
+Combines arrays.
+
+Example
+let a = [1, 2];
+let b = [3, 4];
+
+let result = a.concat(b);
+
+console.log(result);
+Output
+[1, 2, 3, 4]
+19. join()
+Definition
+
+Converts array into string.
+
+Example
+let words = ["Hello", "World"];
+
+console.log(words.join(" "));
+Output
+Hello World
+20. indexOf()
+Definition
+
+Returns first index of value.
+
+Example
+let fruits = ["apple", "banana", "mango"];
+
+console.log(fruits.indexOf("banana"));
+Output
+1
+21. Array.from()
+Definition
+
+Converts iterable/string into array.
+
+Example
+let str = "hello";
+
+let result = Array.from(str);
+
+console.log(result);
+Output
+['h', 'e', 'l', 'l', 'o']
+22. flat()
+Definition
+
+Flattens nested arrays.
+
+Example
+let arr = [1, [2, [3]]];
+
+console.log(arr.flat(2));
+Output
+[1, 2, 3]
+23. flatMap()
+Definition
+
+Performs map + flat together.
+
+Example
+let nums = [1, 2, 3];
+
+let result = nums.flatMap(num => [num, num * 2]);
+
+console.log(result);
+Output
+[1, 2, 2, 4, 3, 6]
+24. fetch() (Important)
+Definition
+
+fetch() is used to get data from APIs/server.
+
+Example
+fetch("https://jsonplaceholder.typicode.com/users")
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+Small Problem
+Fetch posts data
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+    });
+25. fill()
+Definition
+
+Fills array with static value.
+
+Example
+let arr = [1, 2, 3];
+
+arr.fill(0);
+
+console.log(arr);
+Output
+[0, 0, 0]
+26. copyWithin()
+Definition
+
+Copies part of array inside same array.
+
+Example
+let arr = [1, 2, 3, 4];
+
+arr.copyWithin(0, 2);
+
+console.log(arr);
+Output
+[3, 4, 3, 4]
+27. entries()
+Definition
+
+Returns key/value pairs iterator.
+
+Example
+let fruits = ["apple", "banana"];
+
+for(let [index, value] of fruits.entries()){
+    console.log(index, value);
+}
+28. keys()
+Definition
+
+Returns array indexes.
+
+Example
+let arr = ["a", "b", "c"];
+
+for(let key of arr.keys()){
+    console.log(key);
+}
+29. values()
+Definition
+
+Returns array values iterator.
+
+Example
+let arr = ["x", "y", "z"];
+
+for(let value of arr.values()){
+    console.log(value);
+}
+30. toString()
+Definition
+
+Converts array into string.
+
+Example
+let arr = [1, 2, 3];
+
+console.log(arr.toString());
+Output
+1,2,3
+Most Important Methods for Interviews
+Frequently Asked
+map()
+filter()
+reduce()
+find()
+forEach()
+some()
+every()
+sort()
+splice()
+slice()
+fetch()
+Mini Practice Problems
+1. Double numbers using map
+let nums = [1, 2, 3];
+
+let result = nums.map(num => num * 2);
+
+console.log(result);
+2. Filter odd numbers
+let nums = [1, 2, 3, 4, 5];
+
+let odd = nums.filter(num => num % 2 !== 0);
+
+console.log(odd);
+3. Sum all numbers
+let nums = [10, 20, 30];
+
+let sum = nums.reduce((acc, num) => acc + num, 0);
+
+console.log(sum);
+4. Find largest number
+let nums = [5, 9, 2, 15];
+
+let largest = Math.max(...nums);
+
+console.log(largest);
+5. Check all positive numbers
+let nums = [1, 2, 3];
+
+let result = nums.every(num => num > 0);
+
+console.log(result);
