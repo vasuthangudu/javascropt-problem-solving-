@@ -1,0 +1,432 @@
+JavaScript Functions
+
+A function is a block of code used to perform a task.
+
+function greet(){
+   console.log("Hello");
+}
+
+greet();
+Types of Functions in JavaScript
+1. Function Declaration
+function add(a, b){
+   return a + b;
+}
+
+console.log(add(10, 20));
+Example Problem
+
+Find sum of two numbers.
+
+function sum(num1, num2){
+   return num1 + num2;
+}
+
+console.log(sum(5, 7));
+2. Function Expression
+
+Function stored inside a variable.
+
+const multiply = function(a, b){
+   return a * b;
+}
+
+console.log(multiply(4, 5));
+Problem
+
+Find square of a number.
+
+const square = function(num){
+   return num * num;
+}
+
+console.log(square(6));
+3. Arrow Function
+
+Short syntax.
+
+const greet = () => {
+   console.log("Welcome");
+}
+
+greet();
+Example
+const add = (a, b) => a + b;
+
+console.log(add(3, 4));
+Problem
+
+Find cube of a number.
+
+const cube = num => num * num * num;
+
+console.log(cube(3));
+4. Anonymous Function
+
+Function without name.
+
+setTimeout(function(){
+   console.log("Hello");
+}, 1000);
+Problem
+const numbers = [1,2,3];
+
+numbers.forEach(function(num){
+   console.log(num);
+});
+5. Callback Function
+
+Function passed as argument.
+
+function display(name){
+   console.log("Hello " + name);
+}
+
+function getName(callback){
+   let name = "Sudhakar";
+   callback(name);
+}
+
+getName(display);
+Problem
+
+Print result after calculation.
+
+function calculate(a, b, callback){
+   callback(a + b);
+}
+
+calculate(5, 6, function(result){
+   console.log(result);
+});
+6. Higher Order Function
+
+Function that accepts another function.
+
+function operation(a, b, task){
+   return task(a, b);
+}
+
+function add(x, y){
+   return x + y;
+}
+
+console.log(operation(2, 3, add));
+7. Immediately Invoked Function Expression (IIFE)
+
+Runs immediately.
+
+(function(){
+   console.log("IIFE Function");
+})();
+Problem
+(function(name){
+   console.log("Hello " + name);
+})("JavaScript");
+8. Recursive Function
+
+Function calling itself.
+
+function countdown(num){
+   if(num <= 0){
+      return;
+   }
+
+   console.log(num);
+   countdown(num - 1);
+}
+
+countdown(5);
+Problem
+
+Factorial program.
+
+function factorial(num){
+   if(num === 1){
+      return 1;
+   }
+
+   return num * factorial(num - 1);
+}
+
+console.log(factorial(5));
+9. Nested Function
+
+Function inside another function.
+
+function outer(){
+   
+   function inner(){
+      console.log("Inner Function");
+   }
+
+   inner();
+}
+
+outer();
+Problem
+function calculate(a, b){
+
+   function add(){
+      return a + b;
+   }
+
+   return add();
+}
+
+console.log(calculate(4, 5));
+10. Constructor Function
+
+Used to create objects.
+
+function Student(name, age){
+   this.name = name;
+   this.age = age;
+}
+
+const s1 = new Student("Ram", 22);
+
+console.log(s1);
+Problem
+function Mobile(brand, price){
+   this.brand = brand;
+   this.price = price;
+}
+
+const m1 = new Mobile("Samsung", 20000);
+
+console.log(m1);
+Important Function Concepts
+Return Function
+function add(a, b){
+   return a + b;
+}
+
+let result = add(2, 3);
+
+console.log(result);
+Default Parameters
+function greet(name = "Guest"){
+   console.log(name);
+}
+
+greet();
+greet("Ram");
+Rest Parameters
+function total(...numbers){
+
+   let sum = 0;
+
+   for(let num of numbers){
+      sum += num;
+   }
+
+   return sum;
+}
+
+console.log(total(1,2,3,4));
+Spread Operator
+const nums = [10,20,30];
+
+function add(a,b,c){
+   console.log(a+b+c);
+}
+
+add(...nums);
+Closures
+
+Inner function remembers outer variables.
+
+function outer(){
+
+   let count = 0;
+
+   function inner(){
+      count++;
+      console.log(count);
+   }
+
+   return inner;
+}
+
+const counter = outer();
+
+counter();
+counter();
+counter();
+Function Methods
+1. call()
+const person = {
+   name: "Ram"
+};
+
+function greet(age){
+   console.log(this.name, age);
+}
+
+greet.call(person, 22);
+2. apply()
+const person = {
+   name: "Sam"
+};
+
+function greet(city){
+   console.log(this.name, city);
+}
+
+greet.apply(person, ["Hyderabad"]);
+3. bind()
+const person = {
+   name: "Ravi"
+};
+
+function greet(){
+   console.log(this.name);
+}
+
+const newFunc = greet.bind(person);
+
+newFunc();
+Real-Time Problems and Solutions
+1. Check Even or Odd
+function check(num){
+
+   if(num % 2 === 0){
+      return "Even";
+   }
+
+   return "Odd";
+}
+
+console.log(check(10));
+2. Reverse a String
+function reverseString(str){
+   return str.split("").reverse().join("");
+}
+
+console.log(reverseString("hello"));
+3. Largest Number in Array
+function largest(arr){
+
+   let max = arr[0];
+
+   for(let num of arr){
+      if(num > max){
+         max = num;
+      }
+   }
+
+   return max;
+}
+
+console.log(largest([10,40,20,80,5]));
+4. Count Vowels
+function countVowels(str){
+
+   let count = 0;
+
+   let vowels = "aeiouAEIOU";
+
+   for(let char of str){
+      if(vowels.includes(char)){
+         count++;
+      }
+   }
+
+   return count;
+}
+
+console.log(countVowels("JavaScript"));
+5. Palindrome Check
+function palindrome(str){
+
+   let reversed = str.split("").reverse().join("");
+
+   return str === reversed;
+}
+
+console.log(palindrome("madam"));
+6. Sum of Array
+function arraySum(arr){
+
+   let sum = 0;
+
+   for(let num of arr){
+      sum += num;
+   }
+
+   return sum;
+}
+
+console.log(arraySum([1,2,3,4]));
+7. Prime Number
+function isPrime(num){
+
+   if(num < 2){
+      return false;
+   }
+
+   for(let i = 2; i < num; i++){
+
+      if(num % i === 0){
+         return false;
+      }
+   }
+
+   return true;
+}
+
+console.log(isPrime(7));
+8. Fibonacci Series
+function fibonacci(n){
+
+   let a = 0;
+   let b = 1;
+
+   console.log(a);
+   console.log(b);
+
+   for(let i = 2; i < n; i++){
+
+      let c = a + b;
+
+      console.log(c);
+
+      a = b;
+      b = c;
+   }
+}
+
+fibonacci(6);
+Practice Problems
+Find smallest number in array
+Check Armstrong number
+Count words in string
+Remove duplicates from array
+Find factorial using loop
+Convert Celsius to Fahrenheit
+Find second largest number
+Sort array without sort()
+Find missing number in array
+Check anagram strings
+Mini Interview Questions
+What is a function?
+
+A reusable block of code.
+
+Difference between normal function and arrow function?
+Normal Function	Arrow Function
+Has own this	No own this
+Uses function keyword	Uses =>
+Can use constructor	Cannot use constructor
+What is callback function?
+
+A function passed as argument to another function.
+
+What is closure?
+
+A function remembering variables from outer scope.
+
+What is recursion?
+
+Function calling itself.
